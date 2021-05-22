@@ -1,0 +1,9 @@
+# VS Code
+/.vscode
+
+#MAC
+/.DS_strore
+
+#python
+**/__pycache__
+booksblog/boussole.json

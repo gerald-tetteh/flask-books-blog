@@ -1,0 +1,60 @@
+.header {
+  padding: 1rem;
+  max-height: 70vh;
+  height: 100%;
+  background-color: $color-light-yellow;
+  overflow: hidden;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &--image {
+      @include background-image("../assets/images/person.jpg");
+      flex-grow: 1;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    height: 27vh;
+    padding: 2rem;
+    @include background-image("../assets/images/person.jpg",contain);
+    background-position: right;
+    background-color: $color-light-yellow;
+    &-content {
+      flex-direction: row;
+
+      &-text {
+        margin-top: 4rem;
+        max-width: 30rem;
+      }
+
+      &--image {
+        @include background-image("");
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .header {
+    height: 30vh;
+
+    &-content-text {
+      margin-top: 8rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .header {
+    height: 50vh;
+
+    &-content-text {
+      max-width: 60rem;
+    }
+  }
+}

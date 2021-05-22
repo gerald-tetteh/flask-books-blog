@@ -1,0 +1,28 @@
+.header-nav {
+  & .btn {
+    background-color: $color-yellow;
+    color: $color-white;
+  }
+
+  & .navbar-brand {
+    color: $color-black;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+.navbar-dark .navbar-nav .nav-link  {
+  color: $color-black
+}
+.navbar-toggler {
+  background-color: $color-yellow;
+}
+.navbar-dark .navbar-toggler {
+  color: $color-yellow;
+  border-color: $color-yellow;
+}
+
+@media only screen and (min-width: 992px) {
+  .navbar-dark .navbar-nav .nav-link {
+    color: $color-white;
+  }
+}

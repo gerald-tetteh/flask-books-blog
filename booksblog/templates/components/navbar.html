@@ -1,0 +1,35 @@
+{% macro navbar() -%}
+<nav class="header-nav navbar navbar-dark navbar-expand-lg sticky-top">
+  <a href="{{ url_for('index') }}" class="navbar-brand">
+    <img src="{{ url_for('static', filename='assets/images/book.png') }}" alt="Blog Icon" width="40" height="40"
+      class="d-inline-block align-text-center">
+    Criss Book Blog
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Books</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Admin</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link"><i class="fab fa-instagram"></i></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link"><i class="fab fa-twitter"></i></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="btn btn-lg">Let's Chat</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{%- endmacro %}
