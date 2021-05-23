@@ -8,7 +8,7 @@
       <h1 class="header-content-text--heading">
         Criss Nellaer
       </h1>
-      <p>
+      <p class="header-content-text--description">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </p>
     </div>
@@ -17,6 +17,16 @@
 </header>
 
 <main class="blog-list">
-
+  {% for post in posts %}
+  <div class="blog-list-item">
+    <div class="blog-list-item--image">
+      <img src="{{ post['imageUrl'] }}" alt="{{ post['title'] }} image" class="blog-image">
+    </div>
+    <div class="blog-list-item-text">
+      <h3 class="blog-list-item-text--title">{{ post["title"] }}</h3>
+      <p class="blog-list-item-text--description">{{ post["description"][0:100] }}...</p>
+    </div>
+  </div>
+  {% endfor %}
 </main>
 {% endblock content %}

@@ -1,6 +1,9 @@
 from flask import Flask
+from pymongo import MongoClient
 
 app = Flask(__name__)
+client = MongoClient("mongodb+srv://admin:mNtP08nDelAwJQD@cluster0.d93hs.mongodb.net/")
+db = client["blog"]
 
 @app.after_request
 def add_header(r):
