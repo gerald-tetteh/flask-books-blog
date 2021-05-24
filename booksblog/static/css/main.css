@@ -236,3 +236,31 @@ body {
   .login-container {
     max-width: 40rem;
     width: 90%; } }
+
+.create-post-navbar {
+  background-color: #ffe0b2;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem; }
+  .create-post-navbar .navbar-dark .navbar-nav .nav-link {
+    color: #212121; }
+
+.create-post-container {
+  max-width: 60rem;
+  width: 90%;
+  margin: 5rem auto; }
+
+.create-post-form input[type="text"] {
+  transition: all 0.15s ease-in-out; }
+  .create-post-form input[type="text"]:focus {
+    border-color: #ffe0b2;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #ffe0b2; }
+
+.create-post-form-submit input {
+  background-color: #ffa000;
+  width: 100%;
+  font-size: 2rem;
+  color: #f7f7f7; }
+
+@media only screen and (max-width: 768px) {
+  .create-post-navbar {
+    margin: 1rem; } }

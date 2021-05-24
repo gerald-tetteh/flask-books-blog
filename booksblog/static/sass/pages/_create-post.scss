@@ -1,0 +1,41 @@
+.create-post {
+  &-navbar {
+    background-color: $color-light-yellow;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+
+    & .navbar-dark .navbar-nav .nav-link {
+      color: $color-black;
+    }
+  }
+
+  &-container {
+    max-width: 60rem;
+    width: 90%;
+    margin: 5rem auto;
+  }
+  &-form {
+    & input[type="text"] {
+      transition: all 0.15s ease-in-out;
+
+      &:focus {
+        border-color: $color-light-yellow;
+        box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem $color-light-yellow;
+      }
+    }
+    &-submit input {
+      background-color: $color-yellow;
+      width: 100%;
+      font-size: 2rem;
+      color: $color-white;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .create-post {
+    &-navbar {
+      margin: 1rem;
+    }
+  }
+}

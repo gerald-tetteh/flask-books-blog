@@ -1,4 +1,4 @@
-{% macro navbar(authenticated="False") -%}
+{% macro navbar(authenticated=False) -%}
 <nav class="header-nav navbar navbar-dark navbar-expand-lg sticky-top">
   <a href="{{ url_for('index') }}" class="navbar-brand">
     <img src="{{ url_for('static', filename='assets/images/book.png') }}" alt="Blog Icon" width="40" height="40"
@@ -12,6 +12,9 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav ms-auto">
       {% if authenticated == True %}
+      <li class="nav-item">
+        <a href="{{ url_for('create_post') }}" class="nav-link">Create Post</a>
+      </li>
       <li class="nav-item">
         <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
       </li>
