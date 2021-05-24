@@ -6,8 +6,11 @@ html {
 }
 body {
   font-size: 1.6rem;
-  font-family: 'Montserrat', sans-serif;
-  height: 100%;
+  font-family: $font-montserrat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
 }
 
 @media only screen and (min-width: 768px) {

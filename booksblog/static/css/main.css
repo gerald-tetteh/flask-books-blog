@@ -5,8 +5,11 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: 'Montserrat', sans-serif;
-  height: 100%; }
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%; }
 
 @media only screen and (min-width: 768px) {
   body {
@@ -19,7 +22,7 @@ body {
 .header-nav .navbar-brand {
   color: #212121;
   font-size: 2rem;
-  font-family: 'Roboto', sans-serif; }
+  font-family: "Roboto", sans-serif; }
 
 .navbar-dark .navbar-nav .nav-link {
   color: #212121; }
@@ -35,16 +38,118 @@ body {
   .navbar-dark .navbar-nav .nav-link {
     color: #f7f7f7; } }
 
+.blog-list {
+  padding: 1rem; }
+  .blog-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffe0b2;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 1rem; }
+    .blog-list-item:hover {
+      cursor: pointer; }
+    .blog-list-item--image {
+      margin-bottom: 1.5rem;
+      padding: 0.5rem; }
+      .blog-list-item--image .blog-image {
+        height: auto;
+        max-width: 30rem;
+        width: 100%; }
+    .blog-list-item-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .blog-list-item-text--title {
+        font-family: "Roboto", sans-serif;
+        font-size: 2rem; }
+
+@media only screen and (min-width: 500px) {
+  .blog-list-item {
+    flex-direction: row;
+    justify-content: space-around; }
+    .blog-list-item--image {
+      margin-right: 1rem; }
+    .blog-list-item-text {
+      font-size: 1.7rem; }
+      .blog-list-item-text--title {
+        font-size: 2.3rem; } }
+
+@media only screen and (min-width: 992px) {
+  .blog-list-item--image {
+    height: auto;
+    width: 50rem;
+    margin-right: 3rem; }
+  .blog-list-item-text {
+    font-size: 3rem; }
+    .blog-list-item-text--title {
+      font-size: 3.5rem; } }
+
+@media only screen and (min-width: 1200px) {
+  .blog-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .blog-list-item {
+      max-width: 50rem;
+      width: 100%;
+      margin-right: 2rem; }
+      .blog-list-item-text {
+        font-size: 2rem; }
+        .blog-list-item-text--title {
+          font-size: 2.5rem;
+          margin-bottom: 2.5rem; } }
+
+.footer {
+  background-color: #ffe0b2;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column; }
+  .footer i {
+    color: #ffa000; }
+  .footer-contact-info--developer {
+    font-family: "Roboto", sans-serif;
+    font-size: 2.5rem; }
+  .footer-contact-info-list {
+    list-style-type: none;
+    padding: 0; }
+    .footer-contact-info-list--item a:link, .footer-contact-info-list--item a:visited {
+      text-decoration: none;
+      color: #212121; }
+  .footer-tech--title {
+    font-size: 2rem; }
+  .footer-tech-list {
+    list-style-type: none;
+    padding: 0; }
+
+@media only screen and (min-width: 500px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start; } }
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    border-radius: 1rem; } }
+
 .header {
   padding: 1rem;
   max-height: 70vh;
   height: 100%;
   background-color: #ffe0b2;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 1rem; }
   .header-content {
     display: flex;
     flex-direction: column;
     height: 100%; }
+    .header-content-text--heading {
+      font-size: 4rem; }
+    .header-content-text--description {
+      font-size: 2.3rem; }
     .header-content--image {
       background: url("../assets/images/person.jpg");
       background-position: center;
@@ -55,6 +160,7 @@ body {
 @media only screen and (min-width: 768px) {
   .header {
     height: 27vh;
+    border-radius: 1rem;
     padding: 2rem;
     background: url("../assets/images/person.jpg");
     background-position: center;
@@ -67,6 +173,10 @@ body {
       .header-content-text {
         margin-top: 4rem;
         max-width: 30rem; }
+        .header-content-text--heading {
+          font-size: 3rem; }
+        .header-content-text--description {
+          font-size: 1.7rem; }
       .header-content--image {
         background: url("");
         background-position: center;
@@ -77,10 +187,80 @@ body {
   .header {
     height: 30vh; }
     .header-content-text {
-      margin-top: 8rem; } }
+      margin-top: 8rem; }
+      .header-content-text--heading {
+        font-size: 4rem; }
+      .header-content-text--description {
+        font-size: 2rem; } }
 
 @media only screen and (min-width: 1200px) {
   .header {
     height: 50vh; }
     .header-content-text {
       max-width: 60rem; } }
+
+.login-navbar {
+  background-color: #ffe0b2;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem; }
+  .login-navbar .navbar-dark .navbar-nav .nav-link {
+    color: #212121; }
+
+.login-container {
+  max-width: 50rem;
+  width: 100%;
+  margin: 10rem auto; }
+
+.login-form-check--input {
+  transition: all 0.15s ease-in-out; }
+  .login-form-check--input:focus {
+    border-color: #ffe0b2;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #ffe0b2; }
+
+.login-form-email--input {
+  transition: all 0.15s ease-in-out; }
+  .login-form-email--input:focus {
+    border-color: #ffe0b2;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #ffe0b2; }
+
+.login-form-submit input {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #ffa000;
+  font-size: 2rem;
+  color: #f7f7f7; }
+
+@media only screen and (max-width: 768px) {
+  .login-navbar {
+    margin: 1rem; }
+  .login-container {
+    max-width: 40rem;
+    width: 90%; } }
+
+.create-post-navbar {
+  background-color: #ffe0b2;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem; }
+  .create-post-navbar .navbar-dark .navbar-nav .nav-link {
+    color: #212121; }
+
+.create-post-container {
+  max-width: 60rem;
+  width: 90%;
+  margin: 5rem auto; }
+
+.create-post-form input[type="text"] {
+  transition: all 0.15s ease-in-out; }
+  .create-post-form input[type="text"]:focus {
+    border-color: #ffe0b2;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #ffe0b2; }
+
+.create-post-form-submit input {
+  background-color: #ffa000;
+  width: 100%;
+  font-size: 2rem;
+  color: #f7f7f7; }
+
+@media only screen and (max-width: 768px) {
+  .create-post-navbar {
+    margin: 1rem; } }

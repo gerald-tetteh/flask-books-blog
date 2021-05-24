@@ -13,7 +13,50 @@
   </head>
 
   <body>
-    {% block content %}{% endblock content %}
+    <div>
+      {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+      {% for category,message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      {% block content %}{% endblock content %}
+    </div>
+    <footer class="footer">
+      <div class="footer-contact-info">
+        <h5 class="footer-contact-info--developer">
+          Gerald Addo-Tetteh
+        </h5>
+        <ul class="footer-contact-info-list">
+          <li class="footer-contact-info-list--item">
+            <i class="fas fa-phone-alt"></i> +233 55 481 476
+          </li>
+          <li class="footer-contact-info-list--item">
+            <a href="https://www.linkedin.com/in/gerald-addo-tetteh-a28101182/"><i class="fab fa-linkedin"></i>
+              LinkenIn</a>
+          </li>
+          <li class="footer-contact-info-list--item">
+            <a href="https://github.com/gerald-tetteh"><i class="fab fa-github"></i> GitHub</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-tech">
+        <h6 class="footer-tech--title">
+          Technologies Used
+        </h6>
+        <ul class="footer-tech-list">
+          <li class="footer-tech-list--item">Flask</li>
+          <li class="footer-tech-list--item">Python</li>
+          <li class="footer-tech-list--item">HTML</li>
+          <li class="footer-tech-list--item">CSS</li>
+          <li class="footer-tech-list--item">Sass</li>
+        </ul>
+      </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"></script>

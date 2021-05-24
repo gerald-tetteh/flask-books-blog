@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+{% import "components/navbar.html" as navbar %}
+<div class="create-post-navbar">
+  {{ navbar.navbar(current_user.is_authenticated) }}
+</div>
+<div class="create-post-container">
+  <form class="create-post-form" method="POST">
+    {{ form.hidden_tag() }}
+    <fieldset class="create-post-form-group">
+      <div class="create-post-form-title mb-4">
+        {{ form.title.label(class="form-label create-post-form-title--label") }}
+        {% if form.title.errors %}
+        {{ form.title(class="form-control form-control-lg is-invalid create-post-form-title--input") }}
+        <div class="invalid-feedback">
+          {% for error in form.title.errors %}
+          <p>{{ error }}</p>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.title(class="form-control form-control-lg create-post-form-title--input") }}
+        {% endif %}
+      </div>
+      <div class="create-post-form-image mb-4">
+        {{ form.imageUrl.label(class="form-label create-post-form-image--label") }}
+        {% if form.imageUrl.errors %}
+        {{ form.imageUrl(class="form-control form-control-lg is-invalid create-post-form-image--input") }}
+        <div class="invalid-feedback">
+          {% for error in form.imageUrl.errors %}
+          <p>{{ error }}</p>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.imageUrl(class="form-control form-control-lg create-post-form-image--input") }}
+        {% endif %}
+      </div>
+      <div class="create-post-form-description mb-4">
+        {{ form.description.label(class="form-label create-post-form-description--label") }}
+        {% if form.description.errors %}
+        {{ form.description(class="form-control form-control-lg is-invalid create-post-form-decription--input") }}
+        <div class="invalid-feedback">
+          {% for error in form.description.errors %}
+          <p>{{ error }}</p>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.description(class="form-control form-control-lg create-post-form-description--input") }}
+        {% endif %}
+      </div>
+      <div class="create-post-form-submit">
+        {{ form.submit(class="btn btn-lg") }}
+      </div>
+    </fieldset>
+  </form>
+  {{ ckeditor.load() }}
+  {{ ckeditor.config(name="body") }}
+</div>
+{% endblock content %}

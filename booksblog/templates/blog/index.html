@@ -2,17 +2,31 @@
 {% block content %}
 {% import "components/navbar.html" as navbar %}
 <header class="header">
-  {{ navbar.navbar() }}
+  {{ navbar.navbar(current_user.is_authenticated) }}
   <div class="header-content">
     <div class="header-content-text">
       <h1 class="header-content-text--heading">
         Criss Nellaer
       </h1>
-      <p>
+      <p class="header-content-text--description">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </p>
     </div>
     <div class="header-content--image"></div>
   </div>
 </header>
+
+<main class="blog-list">
+  {% for post in posts %}
+  <div class="blog-list-item">
+    <div class="blog-list-item--image">
+      <img src="{{ post['imageUrl'] }}" alt="{{ post['title'] }} image" class="blog-image">
+    </div>
+    <div class="blog-list-item-text">
+      <h3 class="blog-list-item-text--title">{{ post["title"] }}</h3>
+      <div class="blog-list-item-text--description">{{ post["description"][0:100] }}...</div>
+    </div>
+  </div>
+  {% endfor %}
+</main>
 {% endblock content %}

@@ -7,7 +7,7 @@
   & .navbar-brand {
     color: $color-black;
     font-size: 2rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: $font-roboto;
   }
 }
 .navbar-dark .navbar-nav .nav-link  {
