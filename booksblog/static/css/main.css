@@ -6,7 +6,10 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Montserrat", sans-serif;
-  height: 100%; }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%; }
 
 @media only screen and (min-width: 768px) {
   body {
@@ -45,7 +48,7 @@ body {
     background-color: #ffe0b2;
     margin-bottom: 1rem;
     padding: 1rem;
-    border-radius: 0.2rem; }
+    border-radius: 1rem; }
     .blog-list-item:hover {
       cursor: pointer; }
     .blog-list-item--image {
@@ -100,6 +103,38 @@ body {
           font-size: 2.5rem;
           margin-bottom: 2.5rem; } }
 
+.footer {
+  background-color: #ffe0b2;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column; }
+  .footer i {
+    color: #ffa000; }
+  .footer-contact-info--developer {
+    font-family: "Roboto", sans-serif;
+    font-size: 2.5rem; }
+  .footer-contact-info-list {
+    list-style-type: none;
+    padding: 0; }
+    .footer-contact-info-list--item a:link, .footer-contact-info-list--item a:visited {
+      text-decoration: none;
+      color: #212121; }
+  .footer-tech--title {
+    font-size: 2rem; }
+  .footer-tech-list {
+    list-style-type: none;
+    padding: 0; }
+
+@media only screen and (min-width: 500px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start; } }
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    border-radius: 1rem; } }
+
 .header {
   padding: 1rem;
   max-height: 70vh;
@@ -125,6 +160,7 @@ body {
 @media only screen and (min-width: 768px) {
   .header {
     height: 27vh;
+    border-radius: 1rem;
     padding: 2rem;
     background: url("../assets/images/person.jpg");
     background-position: center;
@@ -162,3 +198,41 @@ body {
     height: 50vh; }
     .header-content-text {
       max-width: 60rem; } }
+
+.login-navbar {
+  background-color: #ffe0b2;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem; }
+  .login-navbar .navbar-dark .navbar-nav .nav-link {
+    color: #212121; }
+
+.login-container {
+  max-width: 50rem;
+  width: 100%;
+  margin: 10rem auto; }
+
+.login-form-check--input {
+  transition: all 0.15s ease-in-out; }
+  .login-form-check--input:focus {
+    border-color: #ffe0b2;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #ffe0b2; }
+
+.login-form-email--input {
+  transition: all 0.15s ease-in-out; }
+  .login-form-email--input:focus {
+    border-color: #ffe0b2;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #ffe0b2; }
+
+.login-form-submit input {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #ffa000;
+  font-size: 2rem;
+  color: #f7f7f7; }
+
+@media only screen and (max-width: 768px) {
+  .login-navbar {
+    margin: 1rem; }
+  .login-container {
+    max-width: 40rem;
+    width: 90%; } }

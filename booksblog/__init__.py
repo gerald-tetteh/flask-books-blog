@@ -1,8 +1,15 @@
 from flask import Flask
 from pymongo import MongoClient
+from flask_login import LoginManager
+from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
-client = MongoClient("mongodb+srv://admin:mNtP08nDelAwJQD@cluster0.d93hs.mongodb.net/")
+app.config["SECRET_KEY"] = "621ce3fc-6aa9-4978-a4ec-6709008323e2"
+login_manager = LoginManager(app)
+bcrypt = Bcrypt(app)
+login_manager.login_view = "login"
+login_manager.login_message_category = "info"
+client = MongoClient("mongodb+srv://admin:iykyUuJHSSDiy8Ps@cluster0.d93hs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = client["blog"]
 
 @app.after_request

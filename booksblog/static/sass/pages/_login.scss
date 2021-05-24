@@ -1,0 +1,53 @@
+.login {
+  &-navbar {
+    background-color: $color-light-yellow;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+
+    & .navbar-dark .navbar-nav .nav-link {
+      color: $color-black;
+    }
+  }
+  &-container {
+    max-width: 50rem;
+    width: 100%;
+    margin: 10rem auto;
+  }
+  &-form {
+    &-check--input {
+      transition: all 0.15s ease-in-out;
+      &:focus {
+        border-color: $color-light-yellow;
+        box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem $color-light-yellow;
+      }
+    }
+    &-email {
+      &--input {
+        transition: all 0.15s ease-in-out;
+        &:focus {
+          border-color: $color-light-yellow;
+          box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem $color-light-yellow;
+        }
+      }
+    }
+    &-submit input{
+      width: 100%;
+      margin-top: 1rem;
+      background-color: $color-yellow;
+      font-size: 2rem;
+      color: $color-white;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login {
+    &-navbar {
+      margin: 1rem;
+    }
+    &-container {
+      max-width: 40rem;
+      width: 90%;
+    }
+  }
+}
